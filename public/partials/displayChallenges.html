@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div class="col-md-12 challenge" ng-repeat="challenge in displayChallenges.challenges">
+
+    <div class="challenge-title row col-md-12">{{challenge.title}} ({{challenge.category}})</div>
+
+    <div class="challenge-videos row col-md-12">
+        <div class="row col-md-6 contender {{challenge.challenger.media.ups > challenge.challengee.media.ups ? 'winner' : ''}}">
+            <span class="col-md-12">{{challenge.challenger.name}}</span>
+            <br/>
+            <div ng-if="challenge.challenger.media.type === 'video'" class="media-container">
+                <iframe allowFullScreen allowTransparency="true" class="vzaar-video-player" frameborder="0"  id="vzvd-{{challenge.challenger.media.externalId}}" mozallowfullscreen name="vzvd-{{challenge.challenger.media.externalId}}" src="{{challenge.challenger.media.externalPath}}" title="vzaar video player" type="text/html" webkitAllowFullScreen></iframe>
+            </div>
+            <div ng-if="challenge.challenger.media.type === 'image'" class="media-container">
+                <img src="{{challenge.challenger.media.path}}" width="200" height="150"/>
+            </div>
+            <div class="col-md-6 ups">Ups: {{challenge.challenger.media.ups}}</div>
+            <div class="col-md-6 views">Views: {{challenge.challenger.media.views}}</div>
+        </div>
+
+        <div class="row col-md-6 contender {{challenge.challenger.media.ups < challenge.challengee.media.ups ? 'winner' : ''}}" ng-if="!_.isEmpty(challenge.challengee)">
+            <span class="col-md-12">{{challenge.challengee.name}}</span>
+            <br/>
+            <div ng-if="challenge.challengee.media.type === 'video'" class="media-container">
+                <iframe allowFullScreen allowTransparency="true" class="vzaar-video-player" frameborder="0"  id="vzvd-{{challenge.challengee.media.externalId}}" mozallowfullscreen name="vzvd-{{challenge.challengee.media.externalId}}" src="{{challenge.challengee.media.externalPath}}" title="vzaar video player" type="text/html" webkitAllowFullScreen></iframe>
+            </div>
+            <div ng-if="challenge.challengee.media.type === 'image'" class="media-container">
+                <img src="{{challenge.challengee.media.path}}"  width="200" height="150"/>/>
+            </div>
+            <div class="col-md-6 sups">Ups: {{challenge.challengee.media.ups}}</div>
+            <div class="col-md-6 views">View: {{challenge.challengee.media.views}}</div>
+        </div>
+
+        <div class="row col-md-6" ng-if="_.isEmpty(challenge.challengee)">
+            <div class="no-challengee-yet">
+                <span>Reply Yet</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-data row col-md-12">
+        <div class="likes row col-md-12"></div>
+        <div class="comments row col-md-12">Here goes the comments?</div>
+
+    </div>
+    <hr/>
+</div>

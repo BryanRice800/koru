@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div class="col-md-12">
+    <div class="col-md-12 error">
+        <span class="fa fa-gamepad fa-4x"></span>
+        <span class="row col-md-12 error-code">{{error.code}}</span>
+        <span class="row col-md-12"> {{error.message}}</span>
+        <span ng-if="error.showTryLatter" class="row col-md-12"> Try latter, in the mean time, browse some more <a href="/"> challenges</a> </span>
+    </div>
+</div>

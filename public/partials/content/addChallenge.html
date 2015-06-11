@@ -1,0 +1,63 @@
+<br/>
+<div class="upload-form col-sm-6">
+    <div class="row text-left">
+
+
+        <div class="col-md-12">
+            <label for="challengeTitle">Title:</label><input type="text" ng-model="challenge.title" ng-change="updateChallenge()"/>
+            <tags-input ng-model="uploadForm.people" display-property="username" max-tags="1" placeholder="Add friend" on-invalid-tag="isInvalidFriend($query)" on-tag-added="keepOnlyOnePerson()" on-tag-removed="keepOnlyOnePerson()" allow-leftover-text="false">
+                <auto-complete source="loadPeople($query)" ></auto-complete>
+            </tags-input>
+            <span class="fa fa-plus" ng-click="addChallenged">
+            </span>
+            <label for="challengeCategories" class="">Category: </label>
+            <select name="challengeCategories" ng-model="challenge.category" ng-change="updateChallenge()" >
+                <option selected value="">Select One</option>
+                <option ng-repeat="category in uploadForm.categories" value="{{category.name}}">{{category.name}}</option>
+            </select>
+            <br/>
+            <textarea placeholder="Description" ng-model="challenge.description" ng-change="updateChallenge()"></textarea>
+
+            <br/>
+
+            <div class="col-md-12">
+                <div class="hastags col-md-1 fa fa-slack fa-lg"></div>
+                <tags-input ng-model="challenge.selectTags" display-property="tags" placeholder="Add tags" on-invalid-tag="isInvalidTag($query)" on-tag-added="tagsChanged()" on-tag-removed="tagsChanged()" class="col-md-11"></tags-input> 
+            </div>
+        </div>
+        <tabset>
+            <tab >
+                <tab-heading><span class="fa fa-film fa-lg"></span> Upload Video</tab-heading>
+                <div class="col-md-12 attachVideo" ng-include="uploadForm.addVideoTemplate">
+                </div>
+            </tab>
+            <tab >
+                <tab-heading><span class="fa fa-image fa-lg"></span> Upload Image</tab-heading>
+                <div class="col-md-12 attachImage">
+                    <form id="attachImage" enctype="multipart/form-data" ng-submit="attachImage()" >
+                        <label class="" for="challengeImage">Select Image: </label>
+                        <input type="hidden" value="{{challenge._id}}" name="challengeId" id="challengeId">
+                        <input type="file" name="challengeImage" id="challengeImage"/>
+                        <br/>
+                        <input type="submit" name="submit" value="Submit">
+                    </form>
+                </div>
+            </tab>
+            <tab  disable="true">
+                <tab-heading><span class="fa fa-camera-retro fa-lg"></span> Record Video</tab-heading>
+                <div class="col-md-12 recordVideo">
+                    <span>To Be Implemented</span>
+                    <input type="file" accept="video/*;capture=camera"/>
+                    <span>Record Your Videos</span>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+
+    <hr/>
+
+    <span class="btn-sm btn-danger" ng-click="cancelUpload()">
+        <span class="icon-remove"></span>Cancel
+    </span>
+    <hr/>
+</div>

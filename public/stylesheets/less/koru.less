@@ -1,0 +1,346 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 17, 2015, 9:40:34 PM
+    Author     : bmarquez
+*/
+
+body {   
+    font-family: sans-serif;
+}
+
+
+.top-bar {
+    /*background: red;*/
+    height: 2.5em;
+    vertical-align: middle;
+    padding: .3em 0px;  
+    .main-logo {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-size: 1.5em;
+    }
+    .search-topit {
+        span {
+            margin: .4em 0px;
+        }
+    }
+    div{
+        &.normal-text {
+            span {
+                display: inline;
+                font-size: 0.7em;
+                font-family: trebuchet;
+            }
+        }
+    }
+    .notification {
+        font-weight: bold;
+        vertical-align: sub;
+        position: absolute;
+        background-color: white;
+        &.circle {
+            font-size: .4em;
+            right: 2px;
+            top: -5px;
+            color: red;
+            padding-top: 0.2em;
+            border: 1px solid black;
+            .circle(15px);
+        }
+        &.panel {
+            z-index: 999;
+            background-color: white;
+            width: 226px;
+            border: 1px solid;
+            overflow: auto;
+            height: 200px;
+            font-size: 0.55em;
+            ul {
+                padding: 0px;
+            }
+            li {
+                margin: 3px 0px;
+                padding: 2px 0px;
+                list-style: none;
+                &:nth-child(even) {
+                    background-color: #F5F5FF;
+                }
+            }
+        }
+        &.arrow-up {
+            top:-7px;
+            .arrow-up(20px, 7px, black);
+            &.user{
+                left: 18%;
+            }
+            &.challenge{
+                left: 47.5%;
+            }
+            &.message{
+                left: 77%;
+            }
+        }
+    }
+}
+.content{
+    .challenge{
+        &:nth-child(even){
+            background-color: #F5F5FF;
+        }
+        .contender{
+            .opacity();
+            &.winner{
+                .opacity(1.0);
+            }
+        }
+
+    }
+    .upload-form {
+        .hastags {
+            margin: 0.8em 0px;
+        }
+    }
+    .error{
+        background-color: #F3F5F7;
+        border: 2px solid red;
+        .border-radius(10px);
+        span {
+            .text-shadow();
+        }
+    }
+}
+
+
+.main-panel {
+    /*background: red;*/
+    /*color:white;*/
+    li {
+        list-style: none;
+    }
+}
+
+input{
+    &.error{
+        /*color: red;*/
+        /*border-color: red;*/
+        .box-shadow (0px 0px 10px #999);
+
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.hidden {
+    display:none;
+}
+
+
+.arrow-up(@width, @hight, @color){
+    width: 0;
+    height: 0;
+    border-left: (@width / 2) solid transparent;
+    border-right: (@width / 2) solid transparent;
+    border-bottom: @hight solid @color;
+}
+.circle(@diameter){
+    width: @diameter;
+    height: @diameter;
+    .border-radius(@diameter / 2);
+}
+
+.main-nav-link-logo-common(@width){
+    .float-left-width(@width);
+    background: url(../img/dolphin_icon.gif) no-repeat center;
+    height: 25px;
+}
+.main-nav-menu-item-mobil(){
+    margin: 0px auto;
+    height: 40px;
+    float: left;
+}
+.main-nav-menu-common(){
+    list-style-type: none;
+    margin: 0px auto;
+    padding: 0px;
+    width: 100%;
+    overflow: hidden;
+}
+.main-nav-li-div-a(@width, @margin-top-bottom){
+    .float-left-width(@width);
+    margin: @margin-top-bottom auto;
+    text-decoration: none;
+    &:hover{
+        color: red;
+    }
+}
+.article-header(@position: left){
+
+}
+
+.float-left-width(@width){
+    float: left;
+    width: @width;
+}
+
+/* Functions and mixins */
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+    text-shadow: @string;
+}
+.box-shadow (@string) {
+    -webkit-box-shadow: @string;
+    -moz-box-shadow:    @string;
+    box-shadow:         @string;
+}
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+    -webkit-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+    -moz-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+    box-shadow:		@x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+    -webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+    -moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+    box-shadow:         inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+
+.box-sizing (@type: border-box) {
+    -webkit-box-sizing: @type;
+    -moz-box-sizing:    @type;
+    box-sizing:         @type;
+}
+
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius:    @radius;
+    border-radius:         @radius;
+
+    -moz-background-clip:    padding;
+    -webkit-background-clip: padding-box;
+    background-clip:         padding-box;
+}
+.border-radiuses (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+    -webkit-border-top-right-radius:    @topright;
+    -webkit-border-bottom-right-radius: @bottomright;
+    -webkit-border-bottom-left-radius:  @bottomleft;
+    -webkit-border-top-left-radius:     @topleft;
+
+    -moz-border-radius-topright:        @topright;
+    -moz-border-radius-bottomright:     @bottomright;
+    -moz-border-radius-bottomleft:      @bottomleft;
+    -moz-border-radius-topleft:         @topleft;
+
+    border-top-right-radius:            @topright;
+    border-bottom-right-radius:         @bottomright;
+    border-bottom-left-radius:          @bottomleft;
+    border-top-left-radius:             @topleft;
+
+    -moz-background-clip:    padding; 
+    -webkit-background-clip: padding-box; 
+    background-clip:         padding-box; 
+}
+
+.opacity (@opacity: 0.5) {
+    -webkit-opacity: 	@opacity;
+    -moz-opacity: 	@opacity;
+    -ms-opacity:        @opacity;
+    -o-opacity:         @opacity;
+    opacity: 		@opacity;
+}
+
+.gradient (@startColor: #eee, @endColor: white) {
+    background-color: @startColor;
+    background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    background: -webkit-linear-gradient(top, @startColor, @endColor);
+    background: -moz-linear-gradient(top, @startColor, @endColor);
+    background: -ms-linear-gradient(top, @startColor, @endColor);
+    background: -o-linear-gradient(top, @startColor, @endColor);
+}
+.horizontal-gradient (@startColor: #eee, @endColor: white) {
+    background-color: @startColor;
+    background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+    background-image: -moz-linear-gradient(left, @startColor, @endColor);
+    background-image: -ms-linear-gradient(left, @startColor, @endColor);
+    background-image: -o-linear-gradient(left, @startColor, @endColor);
+    background-image: linear-gradient(left, @startColor, @endColor);
+}
+
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+    -webkit-animation: @name @duration @delay @ease;
+    -moz-animation:    @name @duration @delay @ease;
+    -ms-animation:     @name @duration @delay @ease;
+    -o-animation:      @name @duration @delay @ease;
+    animation:         @name @duration @delay @ease;
+}
+
+.transition (@transition) {
+    -webkit-transition: @transition;  
+    -moz-transition:    @transition;
+    -ms-transition:     @transition; 
+    -o-transition:      @transition;  
+    transition:         @transition;
+}
+.transform(@string){
+    -webkit-transform:	@string;
+    -moz-transform:     @string;
+    -ms-transform: 	@string;
+    -o-transform: 	@string;
+    transform:		@string;
+}
+.scale (@factor) {
+    -webkit-transform:  scale(@factor);
+    -moz-transform: 	scale(@factor);
+    -ms-transform:      scale(@factor);
+    -o-transform: 	scale(@factor);
+    transform:          scale(@factor);
+}
+.rotate (@deg) {
+    -webkit-transform:  rotate(@deg);
+    -moz-transform: 	rotate(@deg);
+    -ms-transform: 	rotate(@deg);
+    -o-transform: 	rotate(@deg);
+    transform:          rotate(@deg);
+}
+.skew (@deg, @deg2) {
+    -webkit-transform:  skew(@deg, @deg2);
+    -moz-transform:     skew(@deg, @deg2);
+    -ms-transform: 	skew(@deg, @deg2);
+    -o-transform: 	skew(@deg, @deg2);
+    transform:          skew(@deg, @deg2);
+}
+.translate (@x, @y:0) {
+    -webkit-transform:       translate(@x, @y);
+    -moz-transform: 	 translate(@x, @y);
+    -ms-transform: 		 translate(@x, @y);
+    -o-transform: 		 translate(@x, @y);
+}
+.translate3d (@x, @y: 0, @z: 0) {
+    -webkit-transform:       translate3d(@x, @y, @z);
+    -moz-transform: 	 translate3d(@x, @y, @z);
+    -ms-transform: 		 translate3d(@x, @y, @z);
+    -o-transform: 		 translate3d(@x, @y, @z);
+}
+.perspective (@value: 1000) {
+    -webkit-perspective: 	@value;
+    -moz-perspective: 	@value;
+    -ms-perspective: 	@value;
+    perspective: 		@value;
+}
+.transform-origin (@x:center, @y:center) {
+    -webkit-transform-origin: @x @y;
+    -moz-transform-origin:    @x @y;
+    -ms-transform-origin:     @x @y;
+    -o-transform-origin:      @x @y;
+}
+
+.fit-content(){
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: -ms-fit-content;
+    width: -o-fit-content;
+    width: fit-content;
+}

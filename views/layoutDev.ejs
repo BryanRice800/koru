@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="app">
+    <head>
+        <title>Koru <% if (this.person) { %> <%= person %> <% }else{ %> Bryan <% } %> </title>
+        <link rel='stylesheet' href='/stylesheets/css/koru.css' />
+        <link rel='stylesheet' href='/stylesheets/css/fonts.css' />
+        <link rel="stylesheet" href="/stylesheets/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="/stylesheets/css/bootstrap.css"> 
+
+        <link rel="stylesheet" href="/stylesheets/css/ng-tags-input.bootstrap.min.css"> 
+        <link rel="stylesheet" href="/stylesheets/css/ng-tags-input.min.css"> 
+
+        <!-- JQuery -->
+        <script src="/javascripts/libraries/jquery.js"></script>
+
+        <!-- AngularJS -->
+        <script src="/javascripts/angularjs/angular-core.js"></script>
+        <script src="/javascripts/angularjs/angular-route.js"></script>
+        <script src="/javascripts/angularjs/angular-resource.js"></script>
+        <script src="/javascripts/angularjs/angular-ui.min.js"></script>
+        <!-- Utils -->
+        <!-- <script src="/javascripts/ui-utils-ieshiv.min.js"></script> -->
+        <script src="/javascripts/utils/ui-utils.min.js"></script>
+
+        <!-- Libraries -->
+        <script src="/javascripts/libraries/ng-tags-input.min.js"></script>
+
+        <!-- Application -->
+        <script src="/javascripts/koru/app.js"></script>
+        <script src="/javascripts/koru/components/index/indexServices.js"></script>
+        <script src="/javascripts/koru/components/login/loginServices.js"></script>
+        <script src="/javascripts/koru/components/signup/signupServices.js"></script>  
+        <script src="/javascripts/koru/components/content/content.js"></script>
+        <script src="/javascripts/koru/components/index/index.js"></script>
+        <script src="/javascripts/koru/components/login/login.js"></script>
+        <script src="/javascripts/koru/components/signup/signup.js"></script>
+        <script type="text/javascript">
+/*
+            var notificationEvents = new EventSource('/notifications');
+            notificationEvents.addEventListener("message", function (event) {
+              var notificaiton = JSON.parse(event.data);
+              console.log('notifications', event.data);
+            });
+*/
+        </script>
+    </head>
+    <body>
+        <%- body %>
+    </body>
+</html>

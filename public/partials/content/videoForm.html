@@ -1,0 +1,11 @@
+<div>
+    <form id="attachVideo" action="{{uploadForm.action}}" method="POST" enctype="multipart/form-data" target="{{uploadForm.target}}" ng-submit="uploadVideo()">
+        <input type="hidden" ng-repeat="(elementName, elementValue) in uploadForm.uploadVideoElements" name="{{elementName}}" value="{{elementValue}}"/>
+        <br/>
+        <label for="file" class="">Video</label>
+        <input type="file" name="file" id="file"/>
+        <br/>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    <iframe name="videoResponse" id="videoResponse" ng-model="challenge.mediaData" ng-change="showValue(this)" class="hidden" iframe-onload="attachVideo()"></iframe>
+</div>

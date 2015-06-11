@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 15, 2015, 3:04:58 PM
+    Author     : bmarquez
+*/
+
+@font-face{
+    font-family: achilles;
+    src: url(../fonts/achv2.ttf);
+}
+
+@font-face{
+    font-family: trebuchetms;
+    src: url(../fonts/Trebuchet_ms.ttf);
+}

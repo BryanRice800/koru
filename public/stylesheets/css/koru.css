@@ -1,0 +1,148 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 17, 2015, 9:40:34 PM
+    Author     : bmarquez
+*/
+body {
+  font-family: sans-serif;
+}
+
+.test {
+	border: 1px solid blue;
+}
+.top-bar {
+  /*background: red;*/
+  height: 2.5em;
+  vertical-align: middle;
+  padding: .3em 0px;
+}
+.top-bar .main-logo {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 1.5em;
+}
+.top-bar .search-topit span {
+  margin: .4em 0px;
+}
+.top-bar div.normal-text span {
+  display: inline;
+  font-size: 0.7em;
+  font-family: trebuchet;
+}
+.top-bar .notification {
+  font-weight: bold;
+  vertical-align: sub;
+  position: absolute;
+  background-color: white;
+}
+.top-bar .notification.circle {
+  font-size: .4em;
+  right: 2px;
+  top: -5px;
+  color: red;
+  padding-top: 0.2em;
+  border: 1px solid black;
+  width: 15px;
+  height: 15px;
+  -webkit-border-radius: 7.5px;
+  -moz-border-radius: 7.5px;
+  border-radius: 7.5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.top-bar .notification.panel {
+  z-index: 999;
+  background-color: white;
+  width: 226px;
+  border: 1px solid;
+  overflow: auto;
+  height: 200px;
+  font-size: 0.55em;
+}
+.top-bar .notification.panel ul {
+  padding: 0px;
+}
+.top-bar .notification.panel li {
+  margin: 3px 0px;
+  padding: 2px 0px;
+  list-style: none;
+}
+.top-bar .notification.panel li:nth-child(even) {
+  background-color: #F5F5FF;
+}
+.top-bar .notification.arrow-up {
+  top: -7px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 7px solid black;
+}
+.top-bar .notification.arrow-up.user {
+  left: 18%;
+}
+.top-bar .notification.arrow-up.challenge {
+  left: 47.5%;
+}
+.top-bar .notification.arrow-up.message {
+  left: 77%;
+}
+.content .challenge:nth-child(even) {
+  background-color: #F5F5FF;
+}
+.content .challenge .contender {
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  -ms-opacity: 0.5;
+  -o-opacity: 0.5;
+  opacity: 0.5;
+}
+.content .challenge .contender.winner {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  -ms-opacity: 1;
+  -o-opacity: 1;
+  opacity: 1;
+}
+.content .upload-form .hastags {
+  margin: 0.8em 0px;
+}
+.content .error {
+  background-color: #F3F5F7;
+  border: 2px solid red;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.content .error span {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.main-panel {
+  /*background: red;*/
+  /*color:white;*/
+}
+.main-panel li {
+  list-style: none;
+}
+input.error {
+  /*color: red;*/
+  /*border-color: red;*/
+  -webkit-box-shadow: 0px 0px 10px #999999;
+  -moz-box-shadow: 0px 0px 10px #999999;
+  box-shadow: 0px 0px 10px #999999;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+/* Functions and mixins */
+/*# sourceMappingURL=topit.css.map */

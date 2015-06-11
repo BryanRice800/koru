@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div class="col-md-12 top-bar" ng-include="'partials/shared/topBar.html'">
+
+</div>
+<div class="main-panel text-left col-md-2">
+    <div class="" ng-controller="MainPanelController">
+        <div class="" ng-model="mainPanel">
+            <div ng-include="'partials/shared/userPanel.html'"></div>
+            <div ng-include="'partials/shared/categories.html'"></div>
+            <div ng-include="'partials/shared/bookmarks.html'"></div>
+            <div class="text-center" ng-include="'partials/shared/logout.html'"></div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center col-md-10 content">
+    <div class="" ng-controller="ContentController">
+        <!--
+        <div class="row">
+            <div ng-include="'partials/content.html'"></div>
+        </div>
+        -->
+        <div class="row" >
+            <div ng-model="uploadForm">
+                <span class="btn btn-default" ng-click="addVideo()">
+                    <span class="icon-repeat"></span>Create Challenge
+                </span>
+                <div ng-include="uploadForm.template" id="uploadVideoForm"></div>
+            </div>
+        </div>
+        <div class="row" ng-model="displayVideos">
+            <div ng-include="displayChallenges.template" id="displayChallenges"></div>
+        </div>
+
+    </div>
+</div>
+<!--
+<div class="row">
+    <div class="container-fluid">
+
+    </div>
+</div>
+-->

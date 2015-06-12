@@ -2,13 +2,13 @@ var express = require('express');
 var multer = require('multer');
 var expressLayouts = require('express-ejs-layouts');
 var path = require('path');
-var port = process.env.PORT || 8181;
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var app = express();
 var env = app.get('env');
+var port = process.env.PORT || 8080;
 
 //custom modules
 var passport = require('passport');

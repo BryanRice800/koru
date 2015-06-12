@@ -6,19 +6,12 @@ and open the template in the editor.
 -->
 <html ng-app="app">
     <head>
-        <title>topIt</title>
+        <title>Koru <% if (this.person) { %> <%= person %> <% }else{ %> Bryan <% } %> </title>
         <link rel="stylesheet" href="/dist/css/style.css"/>
         <script src="/dist/js/script.js"></script>
 
 
         <script type="text/javascript">
-/*
-    var notificationEvents = new EventSource('/notifications');
-            notificationEvents.addEventListener("message", function (event) {
-              var notificaiton = JSON.parse(event.data);
-              console.log(event.data);
-            });
-*/
         </script>
     </head>
     <body>
